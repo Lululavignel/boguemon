@@ -1,0 +1,292 @@
+/*Global*/
+body{
+	background-color: white;
+	font-family: "Proxima Nova Extra Condensed Light";
+	margin-left: 2%;
+	margin-right: 2%; 
+	font-size: 16px;
+}
+
+main{
+	margin-left: 10%;
+	margin-right: 10%;
+	color: black;
+}
+
+/*En-tête et pied de page*/
+header{
+	color : white;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-align: center;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+header nav ul{
+	text-align: left;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+header nav ul li { /*Navigation entre les pages du site dans la tête*/
+	color: black;
+	list-style: none;
+	display: inline;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+header nav ul li form { /*Navigation entre les pages du site dans la tête*/
+	color: black;
+	list-style: none;
+	display: inline;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+    background-color: black;
+	margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-left: -2%;
+    margin-right: -2%;
+    margin-bottom: -2%;
+    text-align: center;
+}
+footer a{
+	color: white;
+}
+footer a:hover{
+	color: black;
+	background-color: white;
+}
+
+
+/*Titres*/
+h1{
+	text-align: center;
+	color: white;
+	background-color: black;
+	margin-left: -15%;
+	margin-right: -15%;
+	margin-top: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: "Proxima Nova Extra Condensed Extrabold";
+}
+
+h2{
+	margin-top: 30px;
+	text-indent: -20px;
+	font-style: italic;
+	color: #0066cc;
+}
+
+h3{
+ 	color: #453D22;
+ 	font-style: italic;
+}
+
+h4 {
+	color: #453D22;
+}
+
+/*Tableaux*/
+
+
+/*Images*/
+img:checked{
+	display: block;
+}
+figure figcaption{
+	text-align: center;
+}
+/*liens*/
+a{
+	text-decoration:none;
+	display:inline-block;
+	padding:8px 8px;
+	color:black;
+	font-family: "Proxima Nova Extra Condensed Thin" ;
+	transition: all 0.4s;
+}
+
+a:hover{
+		color:white;
+		background-color: black;
+	}
+a.current{
+	color:white;
+	background-color: black;
+}
+
+
+/*paragraph*/
+.subtitle p{
+	font-family: "Proxima Nova Semibold Italic";
+}
+
+aside {
+	/*width: 40%; CASSE LA BARRE DE RECHERCHE : les "aside" doivent être des classes*/
+	padding-left: .5rem;
+	margin-left: .5rem;
+	float: right;
+	font-family: "Proxima Nova Condensed Medium" ;
+}
+
+aside > p {
+	margin: .5rem;
+}
+
+p {
+	font-family: "Proxima Nova Thin";
+}
+
+p.subinfo {
+	font-size: 12px;
+	color: #453D22;
+}
+
+
+ul.scrollhorizontal {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollhorizontal {
+  overflow: auto;
+  white-space: nowrap;
+  background-color: #BBB;
+  border: solid;
+  border-color: #453D22
+}
+
+.scrollhorizontal ul {
+	padding: 0px;
+	margin: 0px;
+	white-space: nowrap;
+	background-color: #BBB;
+}
+
+.scrollhorizontal ul li {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.scrollhorizontal ul li a:hover {
+  background-color: #AAA;
+}
+
+aside.search {
+	
+	float: right;
+	font-family: "Proxima Nova Condensed Medium" ;
+	margin-top: .5rem;
+	padding: 0px;
+	text-align: right;
+	vertical-align: sub;
+}
+
+
+ul.results li{
+	display: inline-block;
+	vertical-align: top; /*Ajustments for unavaible posters*/
+	width: 189px; /*poster width (125) + link padding (32x2)*/
+	height: 370px; /*poster height (179) + link padding (8x2)*/
+	border: 1px solid black;
+	margin-right: 2px;
+	margin-top: 5px;
+}
+ul.results h4{
+	text-align: center;
+}
+ul.results p{
+	text-align: center;
+}
+ul.results a{ /*Ajustments for unavaible posters*/
+	height: 195px; /*poster height (179) + link padding (8x2)*/
+	text-align: center;
+}
+
+
+.navpages{
+	text-align: center;
+}
+
+.type_movie {
+	background-image: url('images/ico_clap.png');
+	background-position: 0px 0px, top;
+}
+
+.global_info{
+	display: block;
+	width: 20%;
+	height: 20%;
+	border: solid black 1px;
+	background-color: red;
+}
+
+.credits {
+	display: inline-block;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+}
+.credits td {
+	padding-top: 10px;
+	width: 100px;
+	height: 150px;
+	border: solid black 1px;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+.error {
+	color : crimson;
+}
+
+.sucess {
+	color: forestgreen;
+}
+
+#saisons{
+	display: block;
+}
+
+#informations {
+	display: block;
+}
+
+#suggestions{
+	display: inline-grid;
+}
+
+#vif{
+	display: inline;
+	padding-top: 0;
+	padding-left: 3%; 
+}
+
+#synopsis{
+	display: inline;
+}
+
+#global_info{
+	display: flex;
+}
