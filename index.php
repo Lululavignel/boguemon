@@ -15,7 +15,7 @@
 
 	<p> Bienvenue sur Boguemon Ballad ! Pour accéder à votre espace personnel, connectez vous.</p>
 
-	<form style="margin-right: auto; margin-left: auto; width: 60%;" action="espace-util.php" method="post">
+	<form style="margin-right: auto; margin-left: auto; width: 60%;" action="connexion.php" method="post">
 		<input type="text" name="username" id="username" placeholder="Nom d'utilisateur"/> <br/>
 		<input type="password" name="password" id="password" placeholder="Mot de passe"/> <br/>
 		
