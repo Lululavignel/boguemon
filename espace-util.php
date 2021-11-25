@@ -20,8 +20,13 @@
 		echo "<p>Bienvenue ".$_SESSION['username']."</p>";
 	}
 	
-	//connexion à la database
-	$connexion = connect_db();
+	else{
+		echo "<div class='error'>
+		<h3>Vous n'êtes pas connecté.</h3>
+		<p>Pour accéder à la page de connexion : <a href='index.php' class='underlined'>Cliquez ici</a></p>
+		</div>";
+}
 	
-	echo $_SESSION['username'];
+	
+
 ?>
