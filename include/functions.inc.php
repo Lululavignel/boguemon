@@ -21,7 +21,7 @@ function connect_db() {
 
 	// Vérifier la connexion
 	if($connect == false){
-		die("ERREUR : Impossible de se connecter à la base de donnée. ";
+		die("ERREUR : Impossible de se connecter à la base de donnée. ");
 	}
 	else{
 		return $connect;

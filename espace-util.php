@@ -1,4 +1,5 @@
 <?php
+	ini_set('session.gc_maxlifetime', 1800);
 	session_start();
 	if (isset($_SESSION['username'])){
     	require "./include/connected_header.inc.php";
@@ -16,6 +17,8 @@
 	if (isset($_SESSION['username'])){
 
 		echo "<h1>Mon Boguedex</h1>";
+		
+		echo $_SESSION['id'];
 	
 		echo "<p>Bienvenue ".$_SESSION['username']."</p>";
 	}

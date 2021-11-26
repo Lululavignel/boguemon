@@ -1,4 +1,5 @@
 <?php
+	ini_set('session.gc_maxlifetime', 1800);
 	session_start();
 	if (isset($_SESSION['username'])){
     	require "./include/connected_header.inc.php";
@@ -66,7 +67,7 @@ if (isset($_REQUEST['username'], $_REQUEST['password'], $_REQUEST['confirm_passw
       
       $rs = pg_query($connexion, $query);
         if($rs){
-			//Reécupérer l'Id_Dre
+			//Récupérer l'Id_Dre
 			$query = "SELECT Id_Dre FROM Dresseur WHERE Nom_Dre='".$username."';";
 			$rs = pg_query($connexion, $query);
 			$id_dre = pg_fetch_array($rs);
