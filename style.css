@@ -102,6 +102,20 @@ h4 {
 }
 
 /*Tableaux*/
+table {
+	text-align: center;
+	border: solid;
+}
+
+th {
+	border: solid;
+	border-width: thick;
+}
+
+td {
+	border: solid;
+	border-width: thin;
+}
 
 
 /*Images*/
