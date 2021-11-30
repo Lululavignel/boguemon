@@ -8,11 +8,11 @@
 <html lang="fr">
 
 <head>
-	<title>Boguemon Ballad</title>
+	<title>Boguemon Balade</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link rel="icon" type="image/png" href="images/bogue_ico.png"/>
 	<meta charset="utf-8" />
-	<meta name="description" content="Projet BD-Réseau : Boguemon Ballad" />
+	<meta name="description" content="Projet BD-Réseau : Boguemon Balade" />
 	<meta name="keywords" content="php, web, html, td, database, reseau" />
 	<meta name="author" content="Lucas LAVIGNE et Noah LACCHINI" />
 	<meta name="date" content="2021-11-23" />
@@ -27,10 +27,12 @@
 <body>
 	<header>
 		<nav>
-			<img src="images/boguemon_ballad.png" alt="Logo du site Boguemon Ballad" />
+			<img src="images/boguemon_ballad.png" alt="Logo du site Boguemon Balade" />
 			<ul class="scrollhorizontal">
 				<li><a href="../index.php">Accueil</a></li>
 				<li><a href="../propos.php">A propos</a></li>
 			</ul>
 		</nav>		
 	</header>
+
+	<main>

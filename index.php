@@ -14,7 +14,7 @@
 <!-- Formulaire de connexion -->
 	<h1>Accueil</h1>
 
-	<p> Bienvenue sur Boguemon Ballad ! Pour accéder à votre espace personnel, connectez vous.</p>
+	<p> Bienvenue sur Boguemon Balade ! Pour accéder à votre espace personnel, connectez vous.</p>
 
 	<form style="margin-right: auto; margin-left: auto; width: 60%;" action="connexion.php" method="post">
 		<input type="text" name="username" id="username" placeholder="Nom d'utilisateur"/> <br/>
@@ -28,7 +28,7 @@
 <?php
 	if (isset($_GET['bad-login'])){
 		echo "<div class='error'> <h3>Echec de la connexion.</h3> 
-		<p>L'identifiant le mot de passe entré ne correspondent à aucun compte.</p>
+		<p>Ce nom d'utilisateur n'existe pas ou le mot de passe entré est incorrect.</p>
 		</div>";
 	}
     

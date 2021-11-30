@@ -14,7 +14,7 @@
 
 	<h1>Inscription</h1>
 
-	<p>C'est votre première fois sur Boguemon Ballad ? Créez votre compte et commencez votre aventure !</p>
+	<p>C'est votre première fois sur Boguemon Balade ? Créez votre compte et commencez votre aventure !</p>
 
 	<form style="margin-right: auto; margin-left: auto; width: 60%;" action="inscription.php" method="post"> 
 		<input type="text" name="username" id="username" placeholder="Nom d'utilisateur"/> </br>
@@ -37,29 +37,39 @@
 <?php
 
 //VERIFICATION
-if (isset($_REQUEST['username'], $_REQUEST['password'], $_REQUEST['confirm_password'])){
+if (isset($_POST['username'], $_POST['password'], $_POST['confirm_password'])){
   	//connexion à la database
 	$connexion = connect_db();
 	
+	//Requete pour vérifier que le nom d'utilisateur n'existe pas déjà
+	$query = "SELECT * FROM Dresseur WHERE Nom_Dre='".$username."';";
+	$rs = pg_query($connexion, $query);
+	$nom_dre = pg_fetch_row($rs);
+
 	//gestion des erreurs de formulaire
-    if($_REQUEST['password']!=$_REQUEST['confirm_password']){
+    if($_POST['password']!=$_POST['confirm_password']){
         echo "<div class='error'>
              <h3>Les deux mots de passe ne correspondent pas.</h3>
        </div>";
     }
-	else if ($_REQUEST['username']=="" || $_REQUEST['password']=="" || $_REQUEST['confirm_password']==""){
+	else if ($_POST['username']=="" || $_POST['password']=="" || $_POST['confirm_password']==""){
 		echo "<div class='error'>
              <h3>Tous les champs n'ont pas été remplis.</h3>
+       </div>";
+	}
+	else if ($nom_dre[0] != NULL){ //
+		echo "<div class='error'>
+             <h3>Ce nom d'utilisateur est déjà utilisé. Choisissez-en un autre.</h3>
        </div>";
 	}
 	
 	//execution de l'inscription
     else{
       // récupérer le nom d'utilisateur 
-      $username = stripslashes($_REQUEST['username']); //encodage html vers string pour éviter les erreurs dans les requêtes SQL
+      $username = stripslashes($_POST['username']); //encodage html vers string pour éviter les erreurs dans les requêtes SQL
       
       // récupérer le mot de passe 
-      $password = stripslashes($_REQUEST['password']);
+      $password = stripslashes($_POST['password']);
       $password = md5($password); //hash du password
       
       $query = "INSERT INTO Dresseur(Id_Dre, Nom_Dre, Password, Boguemoula, Admin)

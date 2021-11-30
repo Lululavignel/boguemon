@@ -1,6 +1,8 @@
 <?php
 	require_once "./include/util.inc.php"
 ?>
+
+</main>
 	<footer>
 		<p>Copyrights 2021 : CY-TECH</p>
 		<p> L3 - Projet BD-Réseau </p>
