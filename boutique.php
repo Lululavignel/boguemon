@@ -42,7 +42,7 @@
 	$rs = pg_query($connexion,$query);
 	$data = pg_fetch_row($rs);
 
-	echo "<h3 style='font-weight:bold; margin-right: 5%;'>Boguemoula de ".$_SESSION['username']." : ". $data[0]. "฿ <h3>";
+	echo "<h3 style='font-weight:bold; margin-right: 5%;'>Boguemoula de ".$_SESSION['username']." : ". $data[0]. "฿ </h3>";
 
 	//AFFICHAGE DE LA BOUTIQUE
 	$query = "SELECT * FROM Boutique;";
@@ -54,7 +54,7 @@
 		if ($i<=4){ //restriction pour afficher seulement des balles
 	
 	echo '<form action="achat.php" method="post">
-		<input type="radio" name="objet" id="objet" value="'.$data[0].'" checked="" />';
+		<input type="radio" class="only" name="objet" id="objet" value="'.$data[0].'" checked="" />';
 		echo "<label for='objet'>".$data[1]." / ".$data[2]."฿ </label>";
 		echo '<input type="submit" name="submit" value="Acheter" /> 
 		</form> </br>';
@@ -62,10 +62,6 @@
 		}
 	$i++;
 	}
-	/*
-		echo "<li>";
-		echo $data[i][1]."	"; //nom
-		echo $data[i][2]."	"; //prix
-		//bouton d'achat
-	*/
+
+require_once "./include/footer.inc.php"; 
 ?>

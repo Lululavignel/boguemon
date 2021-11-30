@@ -235,6 +235,29 @@ ul.results a{ /*Ajustments for unavaible posters*/
 	text-align: center;
 }
 
+input.only {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+label.h3 {
+	font-style: italic;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
 
 .navpages{
 	text-align: center;

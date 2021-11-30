@@ -63,23 +63,23 @@ if (isset($_REQUEST['username'], $_REQUEST['password'], $_REQUEST['confirm_passw
       $password = md5($password); //hash du password
       
       $query = "INSERT INTO Dresseur(Id_Dre, Nom_Dre, Password, Boguemoula, Admin)
-            VALUES (DEFAULT, '$username', '$password', '100', '0')";
+            VALUES (DEFAULT, '$username', '$password', '2000', '0')";
       
       $rs = pg_query($connexion, $query);
         if($rs){
 			//Récupérer l'Id_Dre
 			$query = "SELECT Id_Dre FROM Dresseur WHERE Nom_Dre='".$username."';";
 			$rs = pg_query($connexion, $query);
-			$id_dre = pg_fetch_array($rs);
+			$id_dre = pg_fetch_row($rs);
 			
 			if (isset($_POST["surnom"])){
 				$surnom = stripslashes($_POST["surnom"]);
 			}
 			else {
-				$surnom = "";
+				$surnom = NULL;
 			}
 			$query = "INSERT INTO Boguemon(Id_Bog, Num_Bog, Surnom, Id_Dre, Capacite1, Niveau, XP, PV, Attaque, Defense, Attaque_spe, Defense_spe, Vitesse, Dans_Equipe)
-            VALUES (DEFAULT, ".$_POST['starter'].", '$surnom', ".$id_dre[0][0].", ".rand(1,164).", 5, 0, ".rand(8,15).", ".rand(6,10).", ".rand(6,10).", ".rand(6,10).", ".rand(6,10).", ".rand(6,10).", TRUE)";
+            VALUES (DEFAULT, ".$_POST['starter'].", '$surnom', ".$id_dre[0].", ".rand(1,164).", 5, 0, ".rand(8,15).", ".rand(6,10).", ".rand(6,10).", ".rand(6,10).", ".rand(6,10).", ".rand(6,10).", TRUE)";
 			$rs = pg_query($connexion, $query); //entrée du boguemon
 
            echo "<div class='sucess'>

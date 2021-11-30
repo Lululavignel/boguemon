@@ -9,15 +9,15 @@
 	$username = $_POST["username"];
 	$password = md5($_POST["password"]);
 
-	$query = "SELECT * FROM Dresseur WHERE Nom_Dre='$username' AND Password='$password'";
+	$query = "SELECT Id_Dre FROM Dresseur WHERE Nom_Dre='$username' AND Password='$password'";
 	$rs = pg_query($connexion,$query);
-	$data = pg_fetch_array($rs);
+	$data = pg_fetch_row($rs);
 	pg_close();
 	
-	if($data[0][0] != null) { //présence d'un correspondance
+	if($data[0] != null) { //présence d'un correspondance
 		session_start();
 		$_SESSION['username'] = $username;
-		$_SESSION['id'] = $data[0][0]; //colonne id du premier résultat
+		$_SESSION['id'] = $data[0]; //colonne id du premier résultat
 		header('Location: espace-util.php?'.$_SESSION['username']); //redirection
   		exit();
 	}
