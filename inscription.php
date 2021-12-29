@@ -8,7 +8,6 @@
 		require "./include/header.inc.php";
 	}
 	require_once "./include/functions.inc.php";
-	require_once "./include/util.inc.php";
 ?>
 
 
@@ -42,7 +41,7 @@ if (isset($_POST['username'], $_POST['password'], $_POST['confirm_password'])){
 	$connexion = connect_db();
 	
 	//Requete pour vérifier que le nom d'utilisateur n'existe pas déjà
-	$query = "SELECT * FROM Dresseur WHERE Nom_Dre='".$username."';";
+	$query = "SELECT Nom_Dre FROM Dresseur WHERE Nom_Dre='".$_POST['username']."';";
 	$rs = pg_query($connexion, $query);
 	$nom_dre = pg_fetch_row($rs);
 
@@ -57,7 +56,7 @@ if (isset($_POST['username'], $_POST['password'], $_POST['confirm_password'])){
              <h3>Tous les champs n'ont pas été remplis.</h3>
        </div>";
 	}
-	else if ($nom_dre[0] != NULL){ //
+	else if ($nom_dre[0] == $_POST['username']){ //
 		echo "<div class='error'>
              <h3>Ce nom d'utilisateur est déjà utilisé. Choisissez-en un autre.</h3>
        </div>";

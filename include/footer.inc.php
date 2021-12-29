@@ -1,7 +1,3 @@
-<?php
-	require_once "./include/util.inc.php"
-?>
-
 </main>
 	<footer>
 		<p>Copyrights 2021 : CY-TECH</p>

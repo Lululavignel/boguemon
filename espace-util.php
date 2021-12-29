@@ -8,7 +8,6 @@
 		require "./include/header.inc.php";
 	}
 	require_once "./include/functions.inc.php";
-	require_once "./include/util.inc.php";
 ?>
 
 
@@ -24,11 +23,17 @@
 	
 		echo "<p>Bienvenue <strong>".$_SESSION['username']."</strong></p>";
 		
+		$query = "SELECT COUNT(DISTINCT Num_Bog) FROM Boguemon WHERE Id_Dre=".$_SESSION['id'].";";
+		$rs = pg_query($connexion,$query);
+		$boguedex = pg_fetch_row($rs);
+
+		$percentage = round(($boguedex[0]/151)*100,2);
+		echo "<p>Votre Boguedex est complété à <strong>".$percentage." %</strong>";
 		
 		// AFFICHAGE DU SAC
 		echo "<h2>Mon Sac</h2>";
 		
-		$query = "SELECT * FROM Objet NATURAL JOIN Boutique WHERE Id_Dre=".$_SESSION['id'];
+		$query = "SELECT * FROM Objet NATURAL JOIN Boutique WHERE Id_Dre=".$_SESSION['id'].";";
 		$rs = pg_query($connexion,$query);
 
 		echo "<table>

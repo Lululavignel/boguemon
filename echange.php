@@ -8,7 +8,6 @@
 		require "./include/header.inc.php";
 	}
 	require_once "./include/functions.inc.php";
-	require_once "./include/util.inc.php";
 ?>
 
 <h1>Centre d'échange</h1>
@@ -65,7 +64,7 @@ if (isset($_SESSION['username'])){
 	echo "<h2>Demandes d'échange envoyées et reçues</h2> 
 	<p>Acceptez ou refusez les demandes d'échanges que vous avez reçu et consultez vos demandes d'échanges.</p>";
 
-	$query="SELECT * FROM Echange WHERE (Id_Dre_Rec=".$_SESSION['id']." OR Id_Dre_Exp=".$_SESSION['id'].") AND Etat='En attente'";
+	$query="SELECT * FROM Echange WHERE (Id_Dre_Rec=".$_SESSION['id']." OR Id_Dre_Exp=".$_SESSION['id'].") AND Etat='En attente';";
 	$rs = pg_query($connexion,$query);
 
 	echo "<table>

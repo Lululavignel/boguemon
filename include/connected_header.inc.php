@@ -1,7 +1,6 @@
 <?php
 	declare(strict_types=1);
 	require_once "./include/functions.inc.php";
-	require_once "./include/util.inc.php";
 ?>
 
 <!DOCTYPE html>
